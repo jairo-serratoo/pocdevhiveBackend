@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,6 +29,12 @@ public class TrackingController {
 	public ResponseEntity<List<TrackingModel>> listTracking() throws Exception {
 		logger.info("inicia peticion en el controller");
 		return new ResponseEntity<List<TrackingModel>>(trackingService.listTracking(), HttpStatus.OK);
+	}
+
+	@GetMapping(value = "/{id}")
+	public ResponseEntity<TrackingModel> getTracking(@PathVariable("id") final String id) throws Exception {
+		logger.info("inicia peticion en el controller");
+		return new ResponseEntity<TrackingModel>(trackingService.getTracking(id), HttpStatus.OK);
 	}
 
 //	@ResponseStatus(HttpStatus.OK)

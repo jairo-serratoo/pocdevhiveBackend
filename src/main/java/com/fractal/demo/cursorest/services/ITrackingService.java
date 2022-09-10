@@ -8,6 +8,8 @@ public interface ITrackingService {
 
 	List<TrackingModel> listTracking() throws Exception;
 
+	TrackingModel getTracking(String id) throws Exception;
+
 	String saveTracking(TrackingModel trackingModel) throws Exception;
 
 	void deleteTracking(String id) throws Exception;

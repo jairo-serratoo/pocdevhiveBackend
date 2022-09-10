@@ -16,11 +16,23 @@ public class TrackingService implements ITrackingService {
 
 	@Override
 	public List<TrackingModel> listTracking() throws Exception {
-		final List<TrackingModel> response = trackingDao.getAll();
-		for (final TrackingModel trackingModel : response) {
-			trackingModel.setLatitude("19.4183168");
-			trackingModel.setLongitude("-99.155968");
-		}
+//		final List<TrackingModel> response = trackingDao.getAll();
+//		for (final TrackingModel trackingModel : response) {
+//			trackingModel.setLatitude("19.4183168");
+//			trackingModel.setLongitude("-99.155968");
+//		}
+//		return response;
+
+		return null;
+	}
+
+	@Override
+	public TrackingModel getTracking(final String id) throws Exception {
+//		final TrackingModel response = trackingDao.get(id);
+		final TrackingModel response = new TrackingModel();
+		response.setLatitude("19.4183168");
+		response.setLongitude("-99.155968");
+
 		return response;
 	}
 
