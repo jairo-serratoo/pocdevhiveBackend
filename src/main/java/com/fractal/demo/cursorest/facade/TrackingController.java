@@ -1,13 +1,10 @@
 package com.fractal.demo.cursorest.facade;
 
-import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,18 +15,17 @@ import com.fractal.demo.cursorest.services.TrackingService;
 
 @RestController
 @RequestMapping(value = "/tracking")
-@CrossOrigin("*")
 public class TrackingController {
 	final Logger logger = LoggerFactory.getLogger(TrackingController.class);
 
 	@Autowired
 	TrackingService trackingService;
 
-	@GetMapping
-	public ResponseEntity<List<TrackingModel>> listTracking() throws Exception {
-		logger.info("inicia peticion en el controller");
-		return new ResponseEntity<List<TrackingModel>>(trackingService.listTracking(), HttpStatus.OK);
-	}
+//	@GetMapping
+//	public ResponseEntity<List<TrackingModel>> listTracking() throws Exception {
+//		logger.info("inicia peticion en el controller");
+//		return new ResponseEntity<List<TrackingModel>>(trackingService.listTracking(), HttpStatus.OK);
+//	}
 
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<TrackingModel> getTracking(@PathVariable("id") final String id) throws Exception {
