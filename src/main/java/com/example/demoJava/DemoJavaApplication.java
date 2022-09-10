@@ -1,14 +1,13 @@
-package com.fractal.demo.cursorest;
+package com.example.demoJava;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CursorestApplication {
-	
+public class DemoJavaApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CursorestApplication.class, args);
+		SpringApplication.run(DemoJavaApplication.class, args);
 	}
 
 }
