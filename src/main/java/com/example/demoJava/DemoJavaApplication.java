@@ -1,13 +1,13 @@
-package com.devhive.demo;
+package com.example.demoJava;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DemoApplication {
+public class DemoJavaApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(DemoJavaApplication.class, args);
 	}
 
 }
