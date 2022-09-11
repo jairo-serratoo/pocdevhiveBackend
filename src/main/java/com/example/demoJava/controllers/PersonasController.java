@@ -9,18 +9,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demoJava.models.Persona;
 
-
-
 @RestController
 @RequestMapping("/personas")
 public class PersonasController {
 
 	@GetMapping("/list")
-	public List<Persona> listarPersonas(){
-		List<Persona> personas = new ArrayList<>();
-		Persona p = new Persona();
+	public List<Persona> listarPersonas() {
+		final List<Persona> personas = new ArrayList<>();
+		final Persona p = new Persona();
 		p.setId("1");
-		p.setNombre("Jairo");
+		p.setNombre("Eladio Rodriguez Ortiz");
 		p.setEdad("29");
 		personas.add(p);
 		return personas;
