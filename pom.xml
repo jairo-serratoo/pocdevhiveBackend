@@ -14,8 +14,8 @@
 	<name>demoJava</name>
 	<description>Demo project for AzurePipelines</description>
 	<properties>
-		<java.version>11</java.version>
-		<!--<java.version>1.8</java.version> -->
+		<java.version>11</java.version> 
+		<!-- <java.version>1.8</java.version> -->  
 	</properties>
 	<dependencies>
 		<dependency>
@@ -53,6 +53,27 @@
 			<scope>test</scope>
 		</dependency>
 		<!-- JUnit Jupiter -->
+		
+		
+		<dependency>
+			<groupId>com.google.firebase</groupId>
+			<artifactId>firebase-admin</artifactId>
+			<version>8.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
@@ -62,75 +83,6 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			
-			<!-- plugin maven para ejecutar unit test jupiter -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.22.0</version>
-				<configuration>
-					<useSystemClassLoader>false</useSystemClassLoader>
-				</configuration>
-			</plugin>
-
-			<plugin>
-				<groupId>org.jacoco</groupId>
-				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.7.8</version>
-				<executions>
-					<execution>
-						<id>pre-unit-test</id>
-						<goals>
-							<goal>prepare-agent</goal>
-						</goals>
-						<configuration>
-							<destFile>${jacoco.ut.execution.data.file}</destFile>
-							<propertyName>surefireArgLine</propertyName>
-						</configuration>
-					</execution>
-					<execution>
-						<id>post-unit-test</id>
-						<phase>test</phase>
-						<goals>
-							<goal>report</goal>
-						</goals>
-						<configuration>
-							<dataFile>${jacoco.ut.execution.data.file}</dataFile>
-							<outputDirectory>${project.reporting.outputDirectory}/jacoco-ut</outputDirectory>
-						</configuration>
-					</execution>
-					<execution>
-						<id>pre-integration-test</id>
-						<phase>pre-integration-test</phase>
-						<goals>
-							<goal>prepare-agent</goal>
-						</goals>
-						<configuration>
-							<destFile>${jacoco.it.execution.data.file}</destFile>
-							<propertyName>failsafeArgLine</propertyName>
-						</configuration>
-					</execution>
-					<execution>
-						<id>post-integration-test</id>
-						<phase>post-integration-test</phase>
-						<goals>
-							<goal>report</goal>
-						</goals>
-						<configuration>
-							<dataFile>${jacoco.it.execution.data.file}</dataFile>
-							<outputDirectory>${project.reporting.outputDirectory}/jacoco-it</outputDirectory>
-						</configuration>
-					</execution>
-				</executions>
-				<configuration>
-					<excludes>
-						<exclude>**/models/**</exclude>
-						<!-- <exclude>**/DemoApplication.*</exclude> -->
-						<!-- <exclude>**/util/Constants.*</exclude> <exclude>**/transform/**</exclude> 
-							<exclude>**/Application.*</exclude> <exclude>**/configuration/**</exclude> -->
-					</excludes>
-				</configuration>
-			</plugin>
-			<!-- Fin dependencias para unit test jupiter -->
 		</plugins>
 	</build>
 
