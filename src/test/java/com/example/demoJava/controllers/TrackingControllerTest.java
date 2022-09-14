@@ -47,4 +47,41 @@ class TrackingControllerTest {
 
 	}
 
+	@Test
+	void testGetService() {
+		try {
+			final TrackingModel model = new TrackingModel();
+			model.setId("MbFyixxbHETremTEy5bH");
+			model.setAppointmentId("1234567900");
+			model.setName("Magno");
+			model.setLastName("Perez Perez");
+			model.setMail("magno@gmail.com");
+			Mockito.when(trackingService.getTracking(Mockito.anyString())).thenReturn(model);
+			final TrackingModel response = trackingController.getTracking(Mockito.anyString());
+			Assert.assertNotNull(response);
+
+		} catch (final Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	@Test
+	void testCreaateService() {
+		try {
+			final TrackingModel model = new TrackingModel();
+			model.setId("MbFyixxbHETremTEy5bH");
+			model.setAppointmentId("1234567900");
+			model.setName("Magno");
+			model.setLastName("Perez Perez");
+			model.setMail("magno@gmail.com");
+			Mockito.when(trackingService.saveTracking(model)).thenReturn(model);
+			final TrackingModel response = trackingController.saveTracking(model);
+			Assert.assertNotNull(response);
+
+		} catch (final Exception e) {
+			e.printStackTrace();
+		}
+
+	}
 }

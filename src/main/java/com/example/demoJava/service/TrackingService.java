@@ -14,28 +14,32 @@ public class TrackingService {
 	@Autowired
 	TrackingDao trackingDao;
 
-	public List<TrackingModel> listTracking() throws Exception {
+	public List<TrackingModel> listTracking() {
 		final List<TrackingModel> response = trackingDao.findAll();
 		return response;
 
 	}
 
-//	public TrackingModel getTracking(final String id) throws Exception {
-//		final TrackingModel response = trackingDao.get(id);
-//		return response;
-//	}
-//
-//	public String saveTracking(final TrackingModel trackingModel) throws Exception {
-//		final String id = trackingDao.save(trackingModel);
-//		return id;
-//	}
-//
-//	public void updateTracking(final TrackingModel trackingModel, final String id) throws Exception {
-//		trackingDao.save(trackingModel, id);
-//	}
-//
-//	public void deleteTracking(final String id) throws Exception {
-//		trackingDao.delete(id);
-//	}
+	public TrackingModel getTracking(final String id) {
+		return trackingDao.findById(id).get();
+	}
+
+	public TrackingModel saveTracking(final TrackingModel trackingModel) throws Exception {
+		final TrackingModel model = trackingDao.save(trackingModel);
+		return model;
+	}
+
+	public TrackingModel updateTracking(final TrackingModel trackingModel, final String id) throws Exception {
+		if (trackingDao.findById(id).isPresent()) {
+			return trackingDao.save(trackingModel);
+		} else {
+			throw new Exception();
+		}
+
+	}
+
+	public void deleteTracking(final String id) throws Exception {
+		trackingDao.delete(trackingDao.findById(id).get());
+	}
 
 }
