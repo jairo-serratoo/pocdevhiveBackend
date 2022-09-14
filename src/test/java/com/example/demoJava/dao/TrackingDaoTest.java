@@ -14,6 +14,8 @@
 //
 //@SpringBootTest
 //@RunWith(SpringRunner.class)
+////@RunWith(MockitoJUnitRunner.class)
+////@ExtendWith(MockitoExtension.class)
 //class TrackingDaoTest {
 //
 //	@Autowired
@@ -32,6 +34,32 @@
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
+//
+//	}
+//
+//	@Test
+//	void testsaveTracking() throws Exception {
+//		final TrackingModel model = new TrackingModel();
+//		model.setId("MbFyixxbHETremTEy5bH");
+//		model.setAppointmentId("1234567900");
+//		model.setName("Magno");
+//		model.setLastName("Perez Perez");
+//		model.setMail("magno@gmail.com");
+//		final String response = trackingDao.save(model);
+//		Assert.assertNotNull(response);
+//
+//	}
+//
+//	@Test
+//	void testUpdateTracking() throws Exception {
+//		final TrackingModel model = new TrackingModel();
+//		model.setId("MbFyixxbHETremTEy5bH");
+//		model.setAppointmentId("1234567900");
+//		model.setName("Magno malo");
+//		model.setLastName("Perez Perez");
+//		model.setMail("magno@gmail.com");
+//		final String response = trackingDao.save(model, model.getId());
+//		Assert.assertNotNull(response);
 //
 //	}
 //

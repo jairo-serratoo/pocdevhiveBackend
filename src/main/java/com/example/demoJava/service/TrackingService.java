@@ -15,23 +15,27 @@ public class TrackingService {
 	TrackingDao trackingDao;
 
 	public List<TrackingModel> listTracking() throws Exception {
-		final List<TrackingModel> response = trackingDao.getAll();
+		final List<TrackingModel> response = trackingDao.findAll();
 		return response;
 
 	}
 
-	public TrackingModel getTracking(final String id) throws Exception {
-		final TrackingModel response = trackingDao.get(id);
-		return response;
-	}
-
-	public String saveTracking(final TrackingModel trackingModel) throws Exception {
-		final String id = trackingDao.save(trackingModel);
-		return id;
-	}
-
-	public void deleteTracking(final String id) throws Exception {
-		trackingDao.delete(id);
-	}
+//	public TrackingModel getTracking(final String id) throws Exception {
+//		final TrackingModel response = trackingDao.get(id);
+//		return response;
+//	}
+//
+//	public String saveTracking(final TrackingModel trackingModel) throws Exception {
+//		final String id = trackingDao.save(trackingModel);
+//		return id;
+//	}
+//
+//	public void updateTracking(final TrackingModel trackingModel, final String id) throws Exception {
+//		trackingDao.save(trackingModel, id);
+//	}
+//
+//	public void deleteTracking(final String id) throws Exception {
+//		trackingDao.delete(id);
+//	}
 
 }
